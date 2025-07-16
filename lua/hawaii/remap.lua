@@ -33,15 +33,17 @@ map('n', '<A-p>', '<Cmd>BufferPin<CR>', opts)
 -- Close buffer
 map('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
 
--- Telescope fuzzy finder keymaps
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Find Files' })
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Live Grep' })
-vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Find Buffers' })
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Help Tags' })
-vim.keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = 'Recent Files' })
-vim.keymap.set('n', '<leader>fc', builtin.commands, { desc = 'Commands' })
-vim.keymap.set('n', '<leader>fs', builtin.grep_string, { desc = 'Find String' })
-vim.keymap.set('n', '<leader>fw', builtin.current_buffer_fuzzy_find, { desc = 'Find in Buffer' })
+-- Telescope fuzzy finder keymaps (only if telescope is available)
+local status_ok, builtin = pcall(require, 'telescope.builtin')
+if status_ok then
+  vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Find Files' })
+  vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Live Grep' })
+  vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Find Buffers' })
+  vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Help Tags' })
+  vim.keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = 'Recent Files' })
+  vim.keymap.set('n', '<leader>fc', builtin.commands, { desc = 'Commands' })
+  vim.keymap.set('n', '<leader>fs', builtin.grep_string, { desc = 'Find String' })
+  vim.keymap.set('n', '<leader>fw', builtin.current_buffer_fuzzy_find, { desc = 'Find in Buffer' })
+end
 
 vim.api.nvim_create_user_command('E', 'Ex', {})
