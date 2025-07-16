@@ -1,4 +1,3 @@
-	require("hawaii.set")
-	require("hawaii.remap")
-    require("packer.lua")
-
+require("hawaii.set")
+require("hawaii.remap")
+require("hawaii.packer")
