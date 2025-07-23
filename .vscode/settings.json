@@ -1,0 +1,14 @@
+{
+  "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+  "vscode-neovim.neovimInitVimPaths.linux": "/root/repo/init.lua",
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "vscode-neovim.neovimClean": false,
+  "vscode-neovim.useWSL": false,
+  "editor.scrollBeyondLastLine": false,
+  "workbench.colorCustomizations": {
+    "editorCursor.foreground": "#00ff00",
+    "terminal.foreground": "#00ff00"
+  }
+}
